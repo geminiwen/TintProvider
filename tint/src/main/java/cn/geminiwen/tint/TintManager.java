@@ -27,23 +27,6 @@ public class TintManager {
 
     private static final PorterDuff.Mode DEFAULT_MODE = PorterDuff.Mode.SRC_IN;
 
-    private static final WeakHashMap<Context, TintManager> INSTANCE_CACHE = new WeakHashMap<>();
-
-    public static TintManager get(Context context) {
-        TintManager tm = INSTANCE_CACHE.get(context);
-        if (tm == null) {
-            tm = new TintManager(context);
-            INSTANCE_CACHE.put(context, tm);
-        }
-        return tm;
-    }
-
-    private final WeakReference<Context> mContextRef;
-
-    private TintManager(Context context) {
-        mContextRef = new WeakReference<>(context);
-    }
-
     public static void tintDrawable(Drawable drawable, TintInfo tint, int[] state) {
         if (shouldMutateBackground(drawable) && drawable.mutate() != drawable) {
             Log.d(TAG, "Mutated drawable is not the same instance as the input.");

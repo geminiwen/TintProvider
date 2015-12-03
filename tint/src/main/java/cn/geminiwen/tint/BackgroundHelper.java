@@ -15,27 +15,25 @@ import android.view.View;
 public class BackgroundHelper {
 
     private final View mView;
-    private final TintManager mTintManager;
 
     private TintInfo mBackgroundTint;
 
-    BackgroundHelper(View view, TintManager tintManager) {
+    BackgroundHelper(View view) {
         mView = view;
-        mTintManager = tintManager;
     }
 
-    void loadFromAttributes(AttributeSet attrs, int defStyleAttr) {
+    public void loadFromAttributes(AttributeSet attrs, int defStyleAttr) {
         TypedArray a = mView.getContext().obtainStyledAttributes(attrs,
-                R.styleable.ViewBackgroundHelper, defStyleAttr, 0);
+                R.styleable.BackgroundHelper, defStyleAttr, 0);
         try {
-           if (a.hasValue(R.styleable.ViewBackgroundHelper_backgroundTint)) {
+           if (a.hasValue(R.styleable.BackgroundHelper_backgroundTint)) {
                 ViewCompat.setBackgroundTintList(mView,
-                        a.getColorStateList(R.styleable.ViewBackgroundHelper_backgroundTint));
+                        a.getColorStateList(R.styleable.BackgroundHelper_backgroundTint));
             }
-            if (a.hasValue(R.styleable.ViewBackgroundHelper_backgroundTintMode)) {
+            if (a.hasValue(R.styleable.BackgroundHelper_backgroundTintMode)) {
                 ViewCompat.setBackgroundTintMode(mView,
                         DrawableUtils.parseTintMode(
-                                a.getInt(R.styleable.ViewBackgroundHelper_backgroundTintMode, -1),
+                                a.getInt(R.styleable.BackgroundHelper_backgroundTintMode, -1),
                                 null));
             }
         } finally {
@@ -43,17 +41,17 @@ public class BackgroundHelper {
         }
     }
 
-    void onSetBackgroundResource(int resId) {
+    public void onSetBackgroundResource(int resId) {
         // Update the default background tint
         applySupportBackgroundTint();
     }
 
-    void onSetBackgroundDrawable(Drawable background) {
+    public void onSetBackgroundDrawable(Drawable background) {
         // We don't know that this drawable is, so we need to clear the default background tint
         applySupportBackgroundTint();
     }
 
-    void setSupportBackgroundTintList(ColorStateList tint) {
+    public void setSupportBackgroundTintList(ColorStateList tint) {
         if (mBackgroundTint == null) {
             mBackgroundTint = new TintInfo();
         }
@@ -63,11 +61,11 @@ public class BackgroundHelper {
         applySupportBackgroundTint();
     }
 
-    ColorStateList getSupportBackgroundTintList() {
+    public ColorStateList getSupportBackgroundTintList() {
         return mBackgroundTint != null ? mBackgroundTint.mTintList : null;
     }
 
-    void setSupportBackgroundTintMode(PorterDuff.Mode tintMode) {
+    public void setSupportBackgroundTintMode(PorterDuff.Mode tintMode) {
         if (mBackgroundTint == null) {
             mBackgroundTint = new TintInfo();
         }
@@ -77,7 +75,7 @@ public class BackgroundHelper {
         applySupportBackgroundTint();
     }
 
-    PorterDuff.Mode getSupportBackgroundTintMode() {
+    public PorterDuff.Mode getSupportBackgroundTintMode() {
         return mBackgroundTint != null ? mBackgroundTint.mTintMode : null;
     }
 
