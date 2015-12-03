@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="BackgroundHelper">
-        <attr name="backgroundTint" format="color"/>
-        <attr name="backgroundTintMode">
-            <enum name="src_over" value="3"/>
-            <enum name="src_in" value="5"/>
-            <enum name="src_atop" value="9"/>
-            <enum name="multiply" value="14"/>
-            <enum name="screen" value="15"/>
-        </attr>
+        <attr name="backgroundTint"/>
+        <attr name="backgroundTintMode" />
     </declare-styleable>
 </resources>

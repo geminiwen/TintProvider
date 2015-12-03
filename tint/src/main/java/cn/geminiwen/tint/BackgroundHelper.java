@@ -18,7 +18,7 @@ public class BackgroundHelper {
 
     private TintInfo mBackgroundTint;
 
-    BackgroundHelper(View view) {
+    public  BackgroundHelper(View view) {
         mView = view;
     }
 
