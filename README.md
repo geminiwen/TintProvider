@@ -10,6 +10,8 @@ See *app* demo.
 
 ---------
 
+# 中文说明
+
 用来给Lollipop以下的设备进行背景着色, 实现Material Design的一些效果.
 
 暴露了被 android-support-library 隐藏的一些API
