@@ -12,13 +12,13 @@ import android.view.View;
 /**
  * Created by geminiwen on 15/12/3.
  */
-public class BackgroundHelper {
+public class BackgroundTintHelper {
 
     private final View mView;
 
     private TintInfo mBackgroundTint;
 
-    public  BackgroundHelper(View view) {
+    public BackgroundTintHelper(View view) {
         mView = view;
     }
 

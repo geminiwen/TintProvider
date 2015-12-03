@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="BackgroundHelper">
+    <declare-styleable name="BackgroundTintHelper">
         <attr name="backgroundTint"/>
         <attr name="backgroundTintMode" />
     </declare-styleable>

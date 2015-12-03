@@ -9,14 +9,14 @@ import android.support.v4.view.TintableBackgroundView;
 import android.util.AttributeSet;
 import android.view.View;
 
-import cn.geminiwen.tint.BackgroundHelper;
+import cn.geminiwen.tint.BackgroundTintHelper;
 
 /**
  * Created by geminiwen on 15/12/3.
  */
 public class MyView extends View implements TintableBackgroundView {
 
-    private BackgroundHelper mBackgroundHelper;
+    private BackgroundTintHelper mBackgroundHelper;
 
     public MyView(Context context) {
         this(context, null);
@@ -28,7 +28,7 @@ public class MyView extends View implements TintableBackgroundView {
 
     public MyView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mBackgroundHelper = new BackgroundHelper(this);
+        mBackgroundHelper = new BackgroundTintHelper(this);
         mBackgroundHelper.loadFromAttributes(attrs, defStyleAttr);
     }
 
